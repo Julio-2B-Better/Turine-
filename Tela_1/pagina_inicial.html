@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TuriNE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="pagina_inicial.css" />
+
+
+    <script>
+        // Função que lê parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Alerta de conta criada
+        if (getQueryParam('status') === 'contaCriada') {
+            alert("✅ Sua conta foi criada com sucesso!");
+        }
+    </script>
+
+    <script>
+        // Remover botão "Entrar" quando conta criada
+        if (getQueryParam('status') === 'contaCriada') {
+            window.onload = function () {
+                const botaoEntrar = document.querySelector(
+                    "button.w3-button.w3-white.w3-round[onclick=\"window.location.href='login.html'\"]"
+                );
+
+                if (botaoEntrar) {
+                    botaoEntrar.remove();
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <header class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col s6"><h3>TuriNE</h3></div>
+            <div class="w3-col s6 w3-right-align">
+                <button onclick="window.location.href='login.html'" class="w3-button w3-white w3-round">Entrar</button>
+                <button class="w3-button w3-white w3-round">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <div class="mapa">MAPA</div>
+
+    <div class="search-container">
+        <input class="w3-input w3-border" style="width:250px; display:inline-block" placeholder="Digite o local desejado" />
+        <br /><br />
+        <button class="w3-button w3-green" onclick="window.location.href='cadpont.html'">Cadastrar ponto turístico</button>
+    </div>
+
+    <div class="section-title">Explore o nordeste da melhor forma:</div>
+    <p style="margin-left:20px;">Novo por aqui? Confira os locais mais procurados entre os usuários:</p>
+
+    <div class="grid">
+        <div>
+            <p>Local 1 — 5,0★</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+
+        <div>
+            <p>Local 2:</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+
+        <div>
+            <p>Local 3:</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+
+        <div>
+            <p>Local 4:</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+
+        <div>
+            <p>Local 5:</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+
+        <div>
+            <p>Local 6:</p>
+            <div class="card"><div class="pin"></div>clique</div>
+        </div>
+    </div>
+
+    <footer>
+        Grupo Esuda
+    </footer>
+
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pins = document.querySelectorAll('.pin');
+
+            pins.forEach(pin => {
+                pin.addEventListener('click', () => {
+                    pin.classList.toggle('ativo');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
