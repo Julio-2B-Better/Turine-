@@ -1,3 +1,53 @@
+nav.menu-lateral {
+    width: 100px;
+    height: 100%;
+    background-color: #20201f;
+    padding: 40px 0 40px 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+.btn-expandir > i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+ul {
+    height: 100%;
+    list-style-type: none;
+
+}
+ul li.item-menu a{
+    padding: 15px 0;
+    text-decoration: none;
+    padding: 20px 4%;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+ul li.item-menu a .txt-link{
+margin-left: 40px;
+}
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+ul li.item-menu:hover a{
+    background: #1c6307;
+    border-radius: 5px;
+}
+nav.menu-lateral:hover{
+    width: 300px;
+}
 body {
     font-family: Arial, sans-serif;
     background: #e6e2df;
