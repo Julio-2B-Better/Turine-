@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Criar Conta - TuriNE</title>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+
+<link rel="stylesheet" href="cadastro.css" />
+</head>
+
+<body>
+<header>
+    <div class="logo-mini">
+        <img src="" width="120" height="35">
+    </div>
+    
+</header>
+
+
+<div class="container">
+    <div class="logo">
+        <img src="" width="80" height="80">
+        <h2>TuriNE</h2>
+    </div>
+
+    <div class="input-boxes">
+        <input class="styled-input" type="text" placeholder="Nome completo">
+        <input class="styled-input" type="email" placeholder="Email">
+        <input class="styled-input" type="password" placeholder="Senha">
+        <input class="styled-input" type="password" placeholder="Confirmar senha">
+    </div>
+
+    <button type="button" id="butão_criarconta" class="submit-btn">Criar Conta</button>
+    <script>
+        document.getElementById('butão_criarconta').addEventListener('click', function() {
+            window.location.href = 'pagina_pricipal.html?status=contaCriada';
+        });
+    </script>
+
+    <div class="login-box">
+        <strong>Tem uma conta?</strong><br>
+        <button onclick="window.location.href='login.html'">Conecte-se</a>
+    </div>
+
+    <div class="google-btn">
+        <img src="" width="25" height="25"> Fazer login com o Google
+    </div>
+</div>
+
+<footer>
+    rodapé
+</footer>
+</body>
+</html>

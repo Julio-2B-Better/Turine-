@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #dcd9d6;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #0c7211;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    background: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.container {
+    width: 60%;
+    margin: auto;
+    background: white;
+    margin-top: 40px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-boxes {
+    width: 60%;
+    margin: auto;
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    background: #d0d0d0;
+    border: none;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-field:focus {
+    background: #c2c2c2;
+}
+
+.login-btn {
+    display: block;
+    margin: 25px auto;
+    padding: 10px 40px;
+    background: #3a8a3a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-box {
+    width: 55%;
+    margin: auto;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #d0caca;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 40px;
+    background: #11580b;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+}
