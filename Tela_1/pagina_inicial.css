@@ -130,7 +130,7 @@ ul li.item-menu:hover a {
 .card {
     width: 100%;
     aspect-ratio: 16/9;
-    background: #9ea9b46c;
+    background: #b4b4b46c;
     display: flex;
     justify-content: center;
     align-items: center;
