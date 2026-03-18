@@ -48,19 +48,39 @@ ul li.item-menu:hover a{
 nav.menu-lateral:hover{
     width: 300px;
 }
+
+.locais {
+    width: 80%;
+    margin: 40px auto;
+    background: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #e6e2df;
+    background: #ffffff;
     margin: 10;
     padding: 10;
     
 }
 
 header {
-    background: #1c6307;
+    background: #A3CE29;
     padding: 10px;
     color: #fff;
     text-align: center;
+}
+
+.w3-row {
+    display: flex;
+    align-items: center; /* CENTRALIZA VERTICAL */
+}
+
+.w3-right-align {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .top-menu {
@@ -70,13 +90,11 @@ header {
     margin: 15px 0;
 }
 
-
-
 .mapa {
-    width: 80%;
-    height: 220px;
+    width: 400px;
+    height: 200px;
     background: #b4b4b4;
-    margin: auto;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,14 +122,14 @@ header {
 
 .card {
     background: #ddd;
-    height: 180px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
- .pin {
+.pin {
             position: absolute;
             top: 5px;
             right: 5px;
