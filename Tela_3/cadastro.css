@@ -1,113 +1,195 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #dcd9d6;
-    font-family: Arial, sans-serif;
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:white;
 }
 
-header {
-    background: #0c7211;
-    color: white;
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.topo{
+    height:90px;
+    background:#43a047;
+    display:flex;
+    align-items:center;
+    padding-left:25px;
 }
 
-.header-buttons {
-    display: flex;
-    gap: 10px;
+.logo{
+    width:70px;
 }
 
-.small-btn {
-    background: white;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    border: none;
-    cursor: pointer;
+.marca{
+    font-size:22px;
+    margin-left:10px;
+    font-weight:bold;
 }
 
-
-
-.container {
-    width: 60%;
-    margin: auto;
-    background: white;
-    margin-top: 40px;
-    padding: 40px 20px;
-    border-radius: 10px;
-    
+.card{
+    width:900px;
+    margin:60px auto;
+    background:white;
+    border-radius:8px;
+    padding:40px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    text-align:center;
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.input-boxes {
-    width: 60%;
-    margin: auto;
-    background: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.styled-input {
-    width: 100%;
-    background: #d0d0d0;
-    border: none;
-    height: 20px;
-    margin: 10px 0;
-    border-radius: 4px;
-    padding-left: 8px;
-    font-size: 14px;
-}
-
-.styled-input:focus {
-    outline: 2px solid #0c7211;
-    background: #e6e6e6;
-}
-
-.submit-btn {
-    display: block;
-    margin: 25px auto;
-    padding: 10px 40px;
-    background: #0c7211;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.card h1{
+    margin:0px;
+    font-size: 30px;
     font-weight: bold;
-    cursor: pointer;
-    width: 60%;
 }
 
-.login-box {
-    width: 55%;
-    margin: auto;
-    text-align: center;
-    padding: 12px;
-    border: 1px solid #d0caca;
-    border-radius: 4px;
-    margin-bottom: 15px;
-}
-
-.google-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.sub{
+    color:#666;
     font-size: 14px;
-    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom:25px;
 }
 
-footer {
-    margin-top: 40px;
-    background: #0c7211;
+.form-grid{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.coluna{
+    width:320px;
+}
+
+.linha{
+    width:1px;
+    background:#999;
+    height:360px;
+}
+
+.input-box{
+    text-align:left;
+    margin-bottom:18px;
+}
+
+#cpf{
+    width:100%;
+    padding:11px;
+    border-radius:6px;
+    border:1px solid #999;
+    background:#f7f7f7;
+    font-size:14px;
+}
+
+#cpf:hover{
+    border: 2px solid #43a047;
+    background: rgb(233, 231, 231);
+}
+
+#cpf:focus{
+    outline: none;
+    border: 2px solid #43a047;
+    background: rgb(223, 222, 222);
+}
+
+.input-box select{
+    width:100%;
+    padding:11px;
+    border-radius:6px;
+    border:1px solid #999;
+    background:#f7f7f7;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.input-box select:hover{
+    border: 2px solid #43a047;
+    background: rgb(233, 231, 231);
+}
+
+.input-box select:focus{
+    outline:none;
+    border:1px solid #43a047;
+    background:white;
+}
+
+.input-box label{
+    font-size:14px;
+    font-weight: bold;
+    color:#555;
+    display:block;
+    margin-bottom:5px;
+}
+
+.input-box input{
+    width:100%;
+    padding:11px;
+    border-radius:6px;
+    border:1px solid #999;
+    background:#f7f7f7;
+}
+
+.input-box input:hover{
+    border: 2px solid #43a047;
+    background: rgb(233, 231, 231);
+}
+
+.input-box input:focus{
+    outline: none;
+    border: 2px solid #43a047;
+    background: rgb(233, 231, 231);
+}
+
+.data-grid{
+    display:flex;
+    gap:10px;
+}
+
+.data-grid select{
+    flex:1;
+    padding:11px;
+    border-radius:6px;
+    border:1px solid #999;
+    background:#f7f7f7;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.data-grid select:hover{
+    background:#eeeeee;
+}
+
+.data-grid select:focus{
+    outline:none;
+    border:1px solid #43a047;
+    background:white;
+}
+
+.bemvindo{
+    margin-top:15;
+    margin-bottom: 5px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+.btn{
+    margin-top:0px;
+    background:#43a047;
+    color:white;
+    border:none;
+    padding:14px 35px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.btn:hover{
+    background: #2e7d2e;
+}
+
+.rodape {
+    width: 100%;
+    background-color: #43a047;
     color: white;
     text-align: center;
     padding: 12px;
-    font-size: 12px;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
 }

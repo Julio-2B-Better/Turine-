@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - TuriNE</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
     <link rel="stylesheet" href="login.css" />
 </head>
 
 <body>
 
-<header>
-    <div class="logo-mini"> 
-        <img src="" width="120" height="35"> 
-    </div>
+<header class="topo">
+    <img src="/Imagem_site/turine_logo.png" alt="Logo">
 </header>
 
 <div class="login-card">
@@ -62,17 +60,24 @@
         <input type="password" placeholder="Senha" class="input-field">
         <input type="password" placeholder="Confirmar senha" class="input-field">
     
-
-    <button class="login-btn">Entrar</button>
-
-    <div class="register-box">
-        <strong>Crie uma nova conta:</strong><br>
-        <button onclick="window.location.href='cadastro.html'">Criar</button>
+    <div class="input-box">
+        <label>Senha</label>
+        <input type="password" placeholder="Insira sua senha">
     </div>
 
-    <div class="google-btn">
-        <img src="" width="25" height="25"> Fazer login com o Google
+    <div class="btn-area">
+        <button class="btn entrar">Acessar</button>
+        <a class="btn criar" href="/Tela_3/cadastro.html">Criar conta</a>
     </div>
+
+    <p class="senha">Esqueceu sua senha?<br>
+        <a href="#">Clique aqui</a>
+    </p>
+
+    <div class="google">
+        <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+    </div>
+
 </div>
 
 <footer>
