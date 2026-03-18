@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cadastrar Ponto Turístico - TuriNE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Empresa</title>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-<link rel="stylesheet" href="cadastro_ponto.css" />
+    <link rel="stylesheet" href="cadastro_ponto.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo-mini">
-        <img src="" width="120" height="35">
-    </div>
-
-    
-</header>
-
-<div class="form-container">
-
-    <div class="title-tab">cadastrando ponto turístico:</div>
-
-    <div class="inputs-area">
-
-        <div class="left-inputs">
-            <input type="text" class="styled-input" placeholder="Nome do ponto turístico">
-            <input type="text" class="styled-input" placeholder="Endereço">
-            <input type="text" class="styled-input" placeholder="Horário de funcionamento">
-            <textarea class="styled-textarea" placeholder="Descrição"></textarea>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-area">
+            <img src="/Imagem_site/turine_logo.png" alt="Logo">
         </div>
+    </header>
 
-        <div class="right-box">
-            <div class="photo-box">Foto/local</div>
+    <!-- CONTAINER -->
+    <div class="container">
 
-            <div class="mini-lines">
-                <div class="mini-line"></div>
-                <div class="mini-line"></div>
-                <div class="mini-line"></div>
+        <h2>Cadastrar Empresa</h2>
+        <p class="sub">Insira as informações solicitadas</p>
+
+        <div class="form-grid">
+
+            <!-- COLUNA ESQUERDA -->
+            <div class="col">
+                <label>Nome empresa</label>
+                <input type="text">
+
+                <label>Nome fantasia</label>
+                <input type="text">
+
+                <label>CNPJ</label>
+                <input type="text">
+
+                <label>Inscrição Estadual * (se tiver)</label>
+                <input type="text">
+
+                <label>Data de Fundação</label>
+                <input type="date">
             </div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="col">
+                <label>E-mail Corporativo</label>
+                <input type="email">
+
+                <label>Telefone</label>
+                <input type="text">
+
+                <label>Site</label>
+                <input type="text">
+
+                <label>CEP</label>
+                <input type="text">
+            </div>
+
         </div>
 
+        <button class="btn">Próxima etapa</button>
+
     </div>
-
-    <button onclick="window.location.href='pagina_pricipal.html'" class="submit-btn">Solicitar</button>
-    <div style="clear: both;"></div>
-</div>
-
-<footer>
-    rodapé
-</footer>
 
 </body>
+<footer>
+    <p>&copy; 2025 TuriNE. Todos os direitos reservados.</p>
+</footer>
 </html>

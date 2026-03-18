@@ -1,107 +1,112 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #dcd9d6;
-    font-family: Arial, sans-serif;
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    flex-direction: column; /* empilha elementos */
+    align-items:center; /* centraliza horizontal */
+    justify-content:center; /* centraliza vertical */
+    font-family:Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#1fa64b,#8bdc65);
 }
 
-header {
-    background: #0c7211;
-    color: white;
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* LOGO */
+.topo{
+    margin-bottom:20px;
 }
 
-.menu-btn {
-    background: white;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    border: none;
-    cursor: pointer;
+.topo img{
+    width:120px;
 }
 
-
-.container {
-    width: 60%;
-    margin: auto;
-    background: white;
-    margin-top: 40px;
-    padding: 40px 20px;
-    border-radius: 10px;
-    
+/* CARD */
+.login-card{
+    width:460px;
+    background:#e9e9e9;
+    padding:40px 35px 30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    text-align:center;
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+.login-card h2{
+    margin:0;
+    font-size:24px;
+    font-weight:bold;
 }
 
-.input-boxes {
-    width: 60%;
-    margin: auto;
-    background: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+.sub{
+    color:#666;
+    font-size:14px;
+    margin-top:5px;
+    margin-bottom:25px;
 }
 
-.input-field {
-    background: #d0d0d0;
-    border: none;
-    height: 20px;
-    margin: 10px 0;
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 14px;
-    outline: none;
+.input-box{
+    text-align:left;
+    margin-bottom:18px;
 }
 
-.input-field:focus {
-    background: #c2c2c2;
+.input-box label{
+    font-size:14px;
+    color:#555;
+    display:block;
+    margin-bottom:5px;
 }
 
-.login-btn {
-    display: block;
-    margin: 25px auto;
-    padding: 10px 40px;
-    background: #3a8a3a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
+.input-box input{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #aaa;
+    outline:none;
+    background:white;
 }
 
-.register-box {
-    width: 55%;
-    margin: auto;
-    text-align: center;
-    padding: 12px;
-    border: 1px solid #d0caca;
-    border-radius: 4px;
-    margin-bottom: 15px;
+.btn-area{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:10px;
 }
 
-.google-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    cursor: pointer;
+.btn{
+    border:none;
+    padding:12px 28px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    font-size:14px;
 }
 
-footer {
-    margin-top: 40px;
-    background: #11580b;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    font-size: 12px;
+.entrar{
+    background:#3aa655;
+}
+
+.criar{
+    background:#3aa655;
+}
+
+.senha{
+    font-size:13px;
+    color:#666;
+    margin-top:15px;
+}
+
+.senha a{
+    color:#2a6df5;
+    text-decoration:none;
+}
+
+.google{
+    margin-top:25px;
+}
+
+.google img{
+    width:55px;
+    height:55px;
+    background:white;
+    padding:12px;
+    border-radius:50%;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
