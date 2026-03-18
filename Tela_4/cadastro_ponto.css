@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #c84f1d;
+    background: #a4c639;
     color: white;
     padding: 12px;
     display: flex;
@@ -44,7 +44,7 @@ header {
     margin: 25px auto;
     padding: 10px 25px;
     border-radius: 20px;
-    border: 2px solid #c84f1d;
+    border: 2px solid #a4c639;
     background: white;
     font-size: 18px;
     width: 170px;
@@ -59,8 +59,6 @@ header {
     background: white;
     padding: 25px 20px;
     border-radius: 10px;
-    border-right: 10px solid #8b5a4a;
-    border-bottom: 10px solid #8b5a4a;
 }
 
 .title-tab {
@@ -156,7 +154,7 @@ header {
 
 /* Rodapé */
 footer {
-    background: #c84f1d;
+    background: #a4c639;
     color: white;
     text-align: center;
     padding: 12px;
