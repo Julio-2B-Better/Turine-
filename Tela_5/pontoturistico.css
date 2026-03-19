@@ -1,3 +1,7 @@
+.logo img {
+    width: 46px;
+    height: 48px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +11,9 @@
 
 body {
     background: #f5f5f5;
+    align-items: center;
+    
+    
 }
 
 /* Topo */
@@ -71,6 +78,9 @@ body {
 .cards {
     display: flex;
     gap: 15px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
 }
 
 .card {
