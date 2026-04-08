@@ -180,8 +180,11 @@ body{
 }
 
 .btn:hover{
+    background: #2e7d2e;
     background:#a2dda5;
     color: #43a047;
+    border: 2px solid #43a047;
+
 }
 
 .rodape {
