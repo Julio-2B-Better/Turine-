@@ -28,8 +28,8 @@ header.w3-container {
 }
 
 .logo-area img {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 38px;
 }
 
 .logo-area span {
@@ -42,7 +42,7 @@ header.w3-container {
 nav.menu-lateral {
     width: 70px;
     height: 100%;
-    background-color: #20201f;
+    background-color: #4aa04a;
     padding: 40px 0 40px 1%;
     position: fixed;
     top: 0;
@@ -130,7 +130,7 @@ ul li.item-menu:hover a {
 .card {
     width: 100%;
     aspect-ratio: 16/9;
-    background: #9ea9b46c;
+    background: #b4b4b46c;
     display: flex;
     justify-content: center;
     align-items: center;

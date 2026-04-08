@@ -37,7 +37,6 @@ body{
 
 .input-box label{
     font-size:14px;
-    font-weight: bold;
     color:#555;
     display:block;
     margin-bottom:5px;
@@ -50,17 +49,6 @@ body{
     border:1px solid #aaa;
     outline:none;
     background:white;
-}
-
-.input-box input:hover{
-    border: 2px solid #43a047;
-    background: rgb(233, 231, 231);
-}
-
-.input-box input:focus{
-    outline: none;
-    border: 2px solid #43a047;
-    background: rgb(233, 231, 231);
 }
 
 .btn-area{
@@ -160,25 +148,12 @@ body{
     background:#3aa655;
 }
 
-.entrar:hover{
-    border: 2px solid #43a047;
-    background: rgb(233, 231, 231);
-    color: #43a047;
-}
-
 .criar{
     background:#3aa655;
 }
 
-.criar:hover{
-    border: 2px solid #43a047;
-    background: rgb(233, 231, 231);
-    color: #43a047;
-}
-
 .senha{
     font-size:13px;
-    font-weight: bold;
     color:#666;
     margin-top:15px;
 }
