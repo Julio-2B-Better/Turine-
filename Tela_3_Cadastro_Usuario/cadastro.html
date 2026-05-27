@@ -2,28 +2,23 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://ehtykejbsikpbnkrkgsm.supabase.co https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
-    <title>Cadastro</title>
-</head>
-<title>Criar Conta - TuriNE</title>
-
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-
-
-<link rel="stylesheet" href="cadastro.css" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://ehtykejbsikpbnkrkgsm.supabase.co https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://www.w3schools.com;">
+    <title>Criar Conta - TuriNE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="cadastro.css" />
 </head>
 
 <body>
 <header class="topo">
     <div class="area-logo">
         <a href="/Tela_1/pagina_inicial.html">
-        <img src="/Imagem_site/turine_logo.png" width="46" height="48"></a>
+            <img src="/Imagem_site/turine_logo.png" width="46" height="48">
+        </a>
         <span class="marca">Turi-NE</span>
     </div>
 </header>
 
-<div class="card">
+<form id="meuFormCadastro" class="card">
 
     <h1>Cadastrar Usuário</h1>
     <p class="sub">Insira as informações solicitadas</p>
@@ -33,7 +28,7 @@
         <div class="coluna">
             <div class="input-box">
                 <label>Nome completo</label>
-                <input type="text" placeholder="Nome completo">
+                <input type="text" id="regNome" placeholder="Nome completo" required>
             </div>
 
             <div class="input-box">
@@ -48,78 +43,31 @@
 
             <div class="input-box">
                 <label>Data de Nascimento</label>
-                    <div class="data-grid">
-                        <select>
-                            <option>Dia</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                        </select>
+                <div class="data-grid">
+                    <select>
+                        <option>Dia</option>
+                        <option>1</option><option>2</option><option>3</option>
+                    </select>
 
-                        <select>
-                            <option>Mês</option>
-                            <option>Janeiro</option>
-                            <option>Fevereiro</option>
-                            <option>Março</option>
-                            <option>Abril</option>
-                            <option>Maio</option>
-                            <option>Junho</option>
-                            <option>Julho</option>
-                            <option>Agosto</option>
-                            <option>Setembro</option>
-                            <option>Outubro</option>
-                            <option>Novembro</option>
-                            <option>Dezembro</option>
-                        </select>
+                    <select>
+                        <option>Mês</option>
+                        <option>Janeiro</option><option>Fevereiro</option>
+                    </select>
 
-                        <select>
-                            <option>Ano</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                            <option>2026</option>
-                        </select>
-                    </div>
+                    <select>
+                        <option>Ano</option>
+                        <option>2026</option>
+                    </select>
+                </div>
             </div>
 
             <div class="input-box">
-                <div class="input-box">
                 <label>Gênero</label>
                 <select class="select-genero">
                     <option value="">Selecione</option>
                     <option value="feminino">Feminino</option>
                     <option value="masculino">Masculino</option>
-                    <option value="nao-binario">Não binário</option>
-                    <option value="nao">Prefiro não declarar</option>
                 </select>
-                </div>
             </div>
         </div>
 
@@ -128,17 +76,17 @@
         <div class="coluna">
             <div class="input-box">
                 <label>E-mail</label>
-                <input type="text" placeholder="Digite seu E-mail">
+                <input type="email" id="regEmail" placeholder="Digite seu E-mail" required>
             </div>
 
             <div class="input-box">
                 <label>Confirme seu E-mail</label>
-                <input type="text" placeholder="Confirme seu E-mail">
+                <input type="email" placeholder="Confirme seu E-mail">
             </div>
 
             <div class="input-box">
                 <label>Senha</label>
-                <input type="password" placeholder="Digite sua senha">
+                <input type="password" id="regSenha" placeholder="Digite sua senha" required>
             </div>
 
             <div class="input-box">
@@ -151,17 +99,17 @@
 
     <p class="bemvindo">Seja bem-vindo ao Turi-NE!</p>
 
-    <button class="btn">Finalizar Cadastro</button>
+    <button type="submit" class="btn">Finalizar Cadastro</button>
 
-</div>
+</form>
 
 <footer class="rodape">
     2026 - Turi-NE
 </footer>
 
-    <script src="../js/database.js"></script>
-    <script src="../js/patterns.js"></script>
-    <script src="app_cadastro.js"></script>
+<script src="../js/database.js"></script>
+<script src="../js/patterns.js"></script>
+<script src="app_cadastro.js"></script>
 
 </body>
 </html>
