@@ -1,48 +1,57 @@
 class PostgresCadastroImplementor {
-    constructor() { this.connection = DatabaseConnection.getInstance(); }
-    async chamarProcedureCadastro(parametros) {
-        const response = await fetch(`${this.connection.url}/rpc/inserir_usuario`, {
+    constructor() {
+        this.connection = DatabaseConnection.getInstance();
+    }
+
+    async inserirUsuario(dadosUsuario) {
+        const response = await fetch(`${this.connection.url}/USUARIO`, {
             method: 'POST',
-            headers: this.connection.getHeaders(),
-            body: JSON.stringify(parametros)
+            headers: {
+                ...this.connection.getHeaders(),
+                // Esse cabeçalho pede para o Supabase retornar o objeto criado (opcional)
+                "Prefer": "return=representation" 
+            },
+            body: JSON.stringify(dadosUsuario)
         });
-        if (!response.ok) throw new Error("Erro crítico ao executar procedure de cadastro.");
-        return true;
+
+        if (!response.ok) {
+            const erroDetalhado = await response.json();
+            throw new Error(erroDetalhado.message || "Erro ao salvar os dados no banco.");
+        }
+
+        return await response.json();
     }
 }
-
-class CadastroUsuarioService {
-    constructor(bridge) { this.bridge = bridge; }
-    async cadastrar(id, nome, email, senha, tipo) {
-        const payload = {
-            P_ID_USUARIO: parseInt(id),
-            P_NOME: nome,
-            P_EMAIL: email,
-            P_SENHA: senha,
-            P_U_TIPO: tipo
-        };
-        return await this.bridge.chamarProcedureCadastro(payload);
-    }
-}
-
-const cadastroService = new CadastroUsuarioService(new PostgresCadastroImplementor());
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     if (!form) return;
 
+    const cadastroService = new PostgresCadastroImplementor();
+
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const id = Math.floor(Math.random() * 10000);
-        const nome = form.querySelector("#nome").value;
-        const email = form.querySelector("#email").value;
-        const senha = form.querySelector("#senha").value;
-        const tipo = form.querySelector("#tipo_usuario").value;
+
+        // Captura os dados das caixas de texto do seu HTML
+        const nome = form.querySelector("input[placeholder*='Nome']").value; // Ajuste o seletor conforme seu HTML
+        const email = form.querySelector("input[type='email']").value;
+        const senha = form.querySelector("input[type='password']").value;
+
+        // Monta o objeto exatamente com os nomes das COLUNAS do seu banco de dados
+        const novoUsuario = {
+            NOME: nome,
+            EMAIL: email,
+            SENHA: senha
+        };
 
         try {
-            await cadastroService.cadastrar(id, nome, email, senha, tipo);
-            window.location.href = "../Tela_1_Home/pagina_inicial.html?status=contaCriada";
-        } catch (err) { alert(err.message); }
-        window.alert("Cadastro Realizado!!")
+            await cadastroService.inserirUsuario(novoUsuario);
+            alert("🎉 Cadastro realizado com sucesso!");
+            
+            // Redireciona o usuário para a tela de login
+            window.location.href = "../Tela_2_Login/login.html";
+        } catch (err) {
+            alert(`❌ Falha no cadastro: ${err.message}`);
+        }
     });
 });

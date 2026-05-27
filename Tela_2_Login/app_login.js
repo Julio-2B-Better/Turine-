@@ -1,12 +1,17 @@
 class PostgresLoginImplementor {
     constructor() { this.connection = DatabaseConnection.getInstance(); }
     async validarCredenciais(email, senha) {
-        const response = await fetch(`${this.connection.url}/USUARIO?EMAIL=eq.${email}&SENHA=eq.${senha}&select=*`, {
-            method: 'GET', headers: this.connection.getHeaders()
-        });
-        if (!response.ok) throw new Error("Erro ao consultar usuário.");
-        return await response.json();
-    }
+    // Ajustado para bater certinho com a sintaxe PostgREST do Supabase
+    const urlFormatada = `${this.connection.url}/USUARIO?EMAIL=eq.${encodeURIComponent(email)}&SENHA=eq.${encodeURIComponent(senha)}&select=*`;
+    
+    const response = await fetch(urlFormatada, {
+        method: 'GET', 
+        headers: this.connection.getHeaders()
+    });
+    
+    if (!response.ok) throw new Error("Erro ao consultar usuário no banco de dados.");
+    return await response.json();
+}
 }
 
 class LoginService {
