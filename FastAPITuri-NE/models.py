@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Column, String, Integer, Float, Boolean, F
 from sqlalchemy.orm import declarative_base
 from sqlalchemy_utils.types import ChoiceType
 
-db = create_engine("postgreSQL:///baco.db")
+db = create_engine("create_enginepostgresql+psycopg2://postgres:CaBeMajLeSil@db.https://ehtykejbsikpbnkrkgsm.supabase.co/.supabase.co:5432/postgres")
 
 Base = declarative_base()
 
