@@ -43,5 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
             await cadastroService.cadastrar(id, nome, email, senha, tipo);
             window.location.href = "../Tela_1_Home/pagina_inicial.html?status=contaCriada";
         } catch (err) { alert(err.message); }
+        window.alert("Cadastro Realizado!!")
     });
 });
