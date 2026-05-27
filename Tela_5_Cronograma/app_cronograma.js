@@ -1,45 +1,72 @@
-class PostgresCronogramaImplementor {
-    constructor() { this.connection = DatabaseConnection.getInstance(); }
-    async chamarProcedureAgendamento(parametros) {
-        const response = await fetch(`${this.connection.url}/rpc/inserir_agendamento`, {
-            method: 'POST', headers: this.connection.getHeaders(), body: JSON.stringify(parametros)
+class SupabaseCronogramaImplementor {
+    constructor() {
+        this.connection = DatabaseConnection.getInstance();
+    }
+
+    async inserirNoBanco(dadosAgendamento) {
+        const response = await fetch(`${this.connection.url}/agendamento`, {
+            method: 'POST',
+            headers: {
+                ...this.connection.getHeaders(),
+                "Prefer": "return=representation"
+            },
+            body: JSON.stringify(dadosAgendamento)
         });
-        if (!response.ok) throw new Error("Erro ao salvar agendamento de cronograma.");
-        return true;
+
+        if (!response.ok) {
+            const erroDetalhado = await response.json();
+            throw new Error(erroDetalhado.message || "Falha ao registrar agendamento.");
+        }
+        return await response.json();
     }
 }
 
-// BRIDGE ABSTRAÇÃO
-class CronogramaService {
-    constructor(bridge) { this.bridge = bridge; }
-    async agendarVisita(idAgendamento, idTurista, idPonto, dataVisita) {
-        const payload = {
-            P_ID_AGENDAMENTO: parseInt(idAgendamento),
-            P_ID_TURISTA: parseInt(idTurista),
-            P_ID_PONTO: parseInt(idPonto),
-            P_DATA: dataVisita
-        };
-        return await this.bridge.chamarProcedureAgendamento(payload);
+class CronogramaService extends TuriNEObserver {
+    constructor(bridge) {
+        super();
+        this.bridge = bridge;
+    }
+
+    async executarAgendamento(dadosAgendamento) {
+        const resultado = await this.bridge.inserirNoBanco(dadosAgendamento);
+        this.notify(resultado);
     }
 }
 
-const cronogramaService = new CronogramaService(new PostgresCronogramaImplementor());
-
+// =========================================================================
+// INICIALIZAÇÃO DA INTERFACE (UI)
+// =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form-cronograma");
+    const form = document.getElementById("meuFormCronograma") || document.querySelector("form");
     if (!form) return;
+
+    const implementor = new SupabaseCronogramaImplementor();
+    const service = new CronogramaService(implementor);
+
+    service.subscribe(() => {
+        form.reset();
+        alert("✈️ Cronograma criado e agendado com sucesso no banco de dados!");
+    });
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const idAgendamento = Math.floor(Math.random() * 10000);
-        const idTurista = document.getElementById("turista-id").value;
-        const idPonto = document.getElementById("ponto-selecionado-id").value;
-        const dataVisita = document.getElementById("data-agendada").value;
+
+        const dataVisitaInput = form.querySelector("input[type='date']");
+        const idPontoInput = form.querySelector("select, input[placeholder*='Ponto']"); // Adapte ao seu campo
+
+        const idTuristaLogado = localStorage.getItem("id_usuario_logado") || 1;
+
+        const novoAgendamento = {
+            id_agendamento: Math.floor(Math.random() * 900000) + 100000,
+            id_turista: parseInt(idTuristaLogado),
+            id_ponto: idPontoInput ? parseInt(idPontoInput.value) : 1, // Chave estrangeira para tabela ponto_turistico
+            data_visita: dataVisitaInput ? dataVisitaInput.value : new Date().toISOString().split('T')[0]
+        };
 
         try {
-            await cronogramaService.agendarVisita(idAgendamento, idTurista, idPonto, dataVisita);
-            alert("✅ Cronograma de viagem agendado e salvo com sucesso!");
-            form.reset();
-        } catch (err) { alert(err.message); }
+            await service.executarAgendamento(novoAgendamento);
+        } catch (err) {
+            alert(`❌ Falha ao agendar: ${err.message}`);
+        }
     });
 });

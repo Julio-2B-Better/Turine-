@@ -43,9 +43,6 @@ class CadastroService extends TuriNEObserver {
     }
 }
 
-// =========================================================================
-// INICIALIZAÇÃO DA INTERFACE (UI)
-// =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("meuFormCadastro");
     if (!form) return;
